@@ -30,7 +30,8 @@ if os.path.isfile('env.py'):
 SECRET_KEY = 'django-insecure-yuj821j&%7km465x65^rxaaw&k+io74zt*6bdq4m6ik4$18ejv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Local development: DEVELOPMENT=1 enables debug mode automatically.
+DEBUG = os.environ.get('DEVELOPMENT') == '1'
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', 'localhost']
 
